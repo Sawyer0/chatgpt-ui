@@ -1,1 +1,31 @@
+@import "tailwindcss/preflight";
 @tailwind utilities;
+
+@theme {
+  /* Blue colors */
+  --color-blue-100: #dbeafe;
+  --color-blue-200: #bfdbfe;
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+  --color-blue-900: #1e3a8a;
+  
+  /* Brand colors */
+  --color-primary: #2563eb;
+  --color-accent: #f7b7a3;
+  --color-success: #b7e7a7;
+  --color-warning: #ffe7a7;
+  --color-bg: #ffffff;
+  --color-bg-dark: #18181b;
+  --color-border: #e5e7eb;
+  --color-text-light: #22223b;
+  --color-text-dark: #f9fafb;
+}
+
+@theme dark {
+  --color-bg: #18181b;
+  --color-border: #27272a;
+  --color-text: #f9fafb;
+}
+
+/* Custom styles can go here */
+
