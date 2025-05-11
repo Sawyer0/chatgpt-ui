@@ -3,10 +3,9 @@
 type MessageBubbleProps = {
   role: "user" | "assistant";
   content: string;
-  avatar?: string;
 };
 
-const MessageBubble = ({ role, content, avatar }: MessageBubbleProps) => {
+const MessageBubble = ({ role, content }: MessageBubbleProps) => {
   return (
     <div>
       {role === "user" ? (
@@ -15,8 +14,7 @@ const MessageBubble = ({ role, content, avatar }: MessageBubbleProps) => {
           role="group"
           aria-label="User message"
         >
-          <div className="bubble-user" >{content}</div>
-          <div className="avatar-user">{avatar || "U"}</div>
+          <div className="bubble-user">{content}</div>
         </div>
       ) : (
         <div
@@ -24,7 +22,6 @@ const MessageBubble = ({ role, content, avatar }: MessageBubbleProps) => {
           role="group"
           aria-label="Assistant message"
         >
-          <div className="avatar-assistant">{avatar || "A"}</div>
           <div className="bubble-assistant">{content}</div>
         </div>
       )}
