@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import MessageBubble from "@/features/chat/components/MessageBubble";
+import MessageInput from "@/features/chat/components/MessageInput";
 
 type Message = {
   role: "user" | "assistant";
@@ -44,26 +45,11 @@ export default function ChatWindow() {
           </div>
         )}
       </div>
-
-      <div
-        className="sticky bottom-0 bg-white dark:bg-gray-900 p-4 border-t border-gray-200 dark:border-gray-800"
-        role="form"
-        aria-label="Send a message"
-      >
-        <div className="flex gap-2">
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
-            placeholder="Type your message..."
-            className="input-base flex-1"
-          />
-          <button onClick={handleSendMessage} className="btn-primary">
-            Send
-          </button>
-        </div>
-      </div>
+      <MessageInput
+        value={input}
+        onChange={setInput}
+        onSend={handleSendMessage}
+      />
     </div>
   );
 }
